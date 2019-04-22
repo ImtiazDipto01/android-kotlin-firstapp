@@ -12,7 +12,7 @@
             android:id="@+id/tvOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="One"
+            android:text="@string/your_score"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:layout_marginLeft="10dp"
@@ -22,7 +22,7 @@
             android:id="@+id/tvTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Two"
+            android:text="@string/time_left"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:layout_alignParentRight="true"
@@ -31,7 +31,7 @@
 
     <Button
             android:id="@+id/btnTapMe"
-            android:text="Tap Me"
+            android:text="@string/tap_me"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
