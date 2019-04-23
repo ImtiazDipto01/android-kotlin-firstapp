@@ -2,5 +2,6 @@
     <string name="app_name">KotlinTapMe</string>
     <string name="your_score">Your Score : %s</string>
     <string name="time_left">Time Left : %s</string>
+    <string name="your_final_score">Game Over, Your Score is : %s</string>
     <string name="tap_me">Tap Me</string>
 </resources>
