@@ -25,10 +25,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        resetCountDown()
+        if(savedInstanceState != null){
+            timeLeftOnTimer = savedInstanceState.getLong(TIME_LEFT_KEY)
+            score =  savedInstanceState.getInt(SCORE_KEY)
+            restoreValue()
+        }else{
+            resetCountDown()
+        }
         btnTapMe.setOnClickListener {
             incrementScore()
         }
+    }
+
+    private fun restoreValue() {
+        yourScore.text = getString(R.string.your_score, score.toString())
+        val initalTimeLeft = timeLeftOnTimer / 1000
+        tvTimeLeft.text = getString(R.string.time_left, initalTimeLeft.toString())
+
+        countDownTimer = object : CountDownTimer(timeLeftOnTimer, countDownInterval){
+            override fun onFinish() {
+                gameOver()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                val timeLeft = millisUntilFinished / 1000
+                timeLeftOnTimer = millisUntilFinished
+                tvTimeLeft.text = getString(R.string.time_left, timeLeft.toString())
+            }
+
+        }
+
+        countDownTimer.start()
+        gameStarted = true
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -58,6 +86,7 @@ class MainActivity : AppCompatActivity() {
                 tvTimeLeft.text = getString(R.string.time_left, timeLeft.toString())
             }
         }
+
     }
 
     private fun gameOver(){
