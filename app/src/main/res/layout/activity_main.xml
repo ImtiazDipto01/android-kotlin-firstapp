@@ -33,7 +33,9 @@
             android:id="@+id/btnTapMe"
             android:text="@string/tap_me"
             android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
 
 </RelativeLayout>

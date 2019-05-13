@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
             resetCountDown()
         }
         btnTapMe.setOnClickListener {
+            val bounceAnimation  = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            it.startAnimation(bounceAnimation)
             incrementScore()
         }
     }
@@ -102,5 +105,7 @@ class MainActivity : AppCompatActivity() {
         score ++
         val newScore = getString(R.string.your_score, score.toString())
         yourScore.text = newScore
+        val blinkAnimation = AnimationUtils.loadAnimation(this, R.anim.blink)
+        yourScore.startAnimation(blinkAnimation)
     }
 }
