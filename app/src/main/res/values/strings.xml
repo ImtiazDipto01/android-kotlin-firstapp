@@ -5,4 +5,6 @@
     <string name="your_final_score">Game Over, Your Score is : %s</string>
     <string name="tap_me">Tap Me</string>
     <string name="info">info</string>
+    <string name="about_title">Tap Me %s</string>
+    <string name="about_message">Create By Imtiaz Dipto</string>
 </resources>
