@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,8 +36,8 @@ class MainActivity : AppCompatActivity() {
             resetCountDown()
         }
         btnTapMe.setOnClickListener {
-            val bounceAnimation  = AnimationUtils.loadAnimation(this, R.anim.bounce)
-            it.startAnimation(bounceAnimation)
+            /*val bounceAnimation  = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            it.startAnimation(bounceAnimation)*/
             incrementScore()
         }
     }
@@ -107,5 +109,22 @@ class MainActivity : AppCompatActivity() {
         yourScore.text = newScore
         val blinkAnimation = AnimationUtils.loadAnimation(this, R.anim.blink)
         yourScore.startAnimation(blinkAnimation)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.action_info){
+            showInfo()
+        }
+        return true
+    }
+
+    private fun showInfo() {
+
     }
 }
