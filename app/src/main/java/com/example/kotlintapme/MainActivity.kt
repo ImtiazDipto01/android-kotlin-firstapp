@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private val SCORE_KEY = "SCORE_KEY"
         private val TIME_LEFT_KEY = "TIME_LEFT_KEY"
+
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
